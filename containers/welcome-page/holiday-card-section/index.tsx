@@ -66,7 +66,7 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
   const [person, setPerson] = useState('');
   return (
     <section id={format === 'original'? 'photographs': 'paintings'} className="w-full flex justify-center">
-      <div className=" flex flex-col py-10 md:py-28 items-center  gap-8 md:gap-24 w-full max-w-screen-xl mx-5 md:mx-20">
+      <div className=" flex flex-col py-10 md:py-28 items-center  gap-8 md:gap-12 w-full max-w-screen-xl mx-5 md:mx-20">
         <div className="flex flex-col items-center w-full md:max-w-[800px] text-center gap-8">
           <div>
             <p className="text-textColor text-sm md:text-lg">
@@ -124,10 +124,10 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
           </Carousel>
           : person === '' ?
           // <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2">
+              <div className="grid mb-32 grid-cols-1 lg:gap-8 sm:gap-1 sm:grid-cols-2 md:grid-cols-2">
               {recipients.map((recipient) => 
                   <img
-                  className="h-40 w-full max-w-full rounded-lg object-cover object-center"
+                  className="h-40 my-2 w-full max-w-full rounded-lg object-cover object-center"
                   // className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
                     src={`/year2024/original/_${recipient.id}.jpg`}
                     alt={`${recipient.name} Img`}
@@ -138,9 +138,9 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
           : 
           recipients.filter(recipient=> recipient.id === person).map((recipient) => 
             <div>
-            <div className="mb-32 grid gap-8 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
+            <div className="mb-32 grid gap-2 lg:gap-8 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
                 <img
-                    className="h-full w-full rounded-xl object-cover object-center"
+                    className="my-2 h-full w-full rounded-xl object-cover object-center"
                     src={`/year2024/original/_${recipient.id}.jpg`}
                     alt={`${recipient.name} Img`}
                   />

@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 const config: Config = {
   content: [
@@ -10,9 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial': 'radial-gradient(#f69d3c)',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1)'
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',
@@ -46,4 +47,4 @@ const config: Config = {
   },
   plugins: [],
 }
-export default config
+export default withMT(config)

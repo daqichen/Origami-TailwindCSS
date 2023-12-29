@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import React, { FC, useState } from "react";
+import { Carousel, Typography } from "@material-tailwind/react";
 
 interface HolidayCardSectionProps {
   format: string;
 }
-
-const recipientss = ['lisaTom', 'eileen', 'evan', 'geriVirginia', 'me', 'resh', 'rosamaria', 'stacy', 'tara', 'wendy'];
 
 const recipients = [
   {
@@ -71,10 +70,12 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
         <div className="flex flex-col items-center w-full md:max-w-[800px] text-center gap-8">
           <div>
             <p className="text-textColor text-sm md:text-lg">
-              You can select just your {format === 'original'? 'photograph': 'painting'} with this dropdown:
+              {format === 'original'? 'You can select just your photograph with this dropdown:': 'Painting Wall!'} 
             </p>
           </div>
-          {/* Dropdown */}
+
+          {/* Dropdown: only photographs are applicable */}
+          {format === 'original' && 
           <div className="relative inline-block text-left">
             <div className="group">
                 {person===''?
@@ -105,26 +106,62 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
 
                     </div>
                 </div>}
-            </div>
-        </div>
+              </div>
+          </div>}
+
         </div>
         
-        {/* Dynamic View */}
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
-          {person!=''? 
-          recipients.filter(recipient=> recipient.id === person).map((recipient) => 
-              <div>
-                <Image
-                  className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
-                  src={`/year2024/${format === 'original'? 'original': 'painted'}/_${recipient.id}.jpg`}
-                  width={200}
-                  height={200}
-                  unoptimized
+        {/* Dynamic View or Static if paintings*/}
+        {format!='original'? 
+          <Carousel className="rounded-xl" placeholder={undefined}>
+            {recipients.map((recipient) => 
+                <img
+                  className="h-full w-full object-cover"
+                  src={`/year2024/painted/_${recipient.id}.jpg`}
                   alt={`${recipient.name} Img`}
-                  priority
-                  onClick={()=> setPerson(recipient.id)}
                 />
-                <Image
+            )}
+          </Carousel>
+          : person === '' ?
+          // <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2">
+              {recipients.map((recipient) => 
+                  <img
+                  className="h-40 w-full max-w-full rounded-lg object-cover object-center"
+                  // className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
+                    src={`/year2024/original/_${recipient.id}.jpg`}
+                    alt={`${recipient.name} Img`}
+                    onClick={()=> setPerson(recipient.id)}
+                  />
+              )}
+              </div>
+          : 
+          recipients.filter(recipient=> recipient.id === person).map((recipient) => 
+            <div>
+            <div className="mb-32 grid gap-8 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
+                <img
+                    className="h-full w-full rounded-xl object-cover object-center"
+                    src={`/year2024/original/_${recipient.id}.jpg`}
+                    alt={`${recipient.name} Img`}
+                  />
+                <figure className="relative h-96 w-full">
+                  <img
+                    className="h-full w-full rounded-xl object-cover object-center"
+                    src={`/year2024/painted/_${recipient.id}.jpg`}
+                    alt={`${recipient.name} Img`}
+                  />
+                  <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
+                    <div>
+                      <Typography variant="h5" color="blue-gray" placeholder={undefined}>
+                        {recipient.name}
+                      </Typography>
+                      <Typography color="gray" className="mt-2 font-normal" placeholder={undefined}>
+                        {recipient.description}
+                      </Typography>
+                    </div>
+                  </figcaption>
+                </figure>
+                {/* <Image
                   className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
                   src={`/year2024/${format != 'original'? 'original': 'painted'}/_${recipient.id}.jpg`}
                   width={200}
@@ -132,25 +169,14 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
                   unoptimized
                   alt={`${recipient.name} Img`}
                   priority
-                  onClick={()=> setPerson(recipient.id)}
-                />
-                <p className="text-textColor text-sm md:text-lg">
-                  {recipient.description}
-                </p>
+                /> */}
               </div>
-          ): recipients.map((recipient) => 
-              <Image
-                className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
-                src={`/year2024/${format === 'original'? 'original': 'painted'}/_${recipient.id}.jpg`}
-                width={200}
-                height={200}
-                unoptimized
-                alt={`${recipient.name} Img`}
-                priority
-                onClick={()=> setPerson(recipient.id)}
-              />
-          )}
-          </div>
+              {/* <p className="text-textColor text-center text-sm md:text-lg">
+                {recipient.description}
+              </p> */}
+            </div>
+          )      
+          }
       </div>
     </section>
   );

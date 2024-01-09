@@ -79,6 +79,7 @@ jobs:
           echo ACCESS_USER=${{ secrets.ACCESS_USER }} >> .env.production
           echo ACCESS_CODE=${{ secrets.ACCESS_CODE }} >> .env.production
           echo NOTES=${{ secrets.NOTES }} >> .env.production
+          cat .env.production
           ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

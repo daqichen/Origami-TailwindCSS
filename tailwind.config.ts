@@ -15,6 +15,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1)'
       },
+      colors:{
+        'primaryColor':'#151411',
+        'darkblue':'#113340',
+        'black':'#151411',
+        'offwhite':'#F2F1E4',
+        'darkgrey': '#736A5F',
+        'darksilver':'#4A5259',
+        'lightsilver':'#D9D9D9'
+      },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',
         caret: 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s',

@@ -1,6 +1,4 @@
 'use client'
-
-import Image from "next/image";
 import React, { FC, useState } from "react";
 import { Carousel, Typography } from "@material-tailwind/react";
 

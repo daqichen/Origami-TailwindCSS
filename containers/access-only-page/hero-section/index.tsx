@@ -66,7 +66,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   const getNotes = async() => {
     const res = await fetch('/year2024/api/notes');
     const data = await res.json();
-    return data?.NOTES;
+    return JSON.parse(data?.NEXT);
   }
 
   return (

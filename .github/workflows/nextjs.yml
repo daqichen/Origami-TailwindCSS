@@ -74,12 +74,17 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        env:
+          ACCESS_USER: ${{ secrets.ACCESS_USER }}
+          ACCESS_CODE: ${{ secrets.ACCESS_CODE }}
+          NOTES: ${{ secrets.NOTES }}
         run: |
           touch .env.production
-          echo ACCESS_USER=${{ secrets.ACCESS_USER }} >> .env.production
-          echo ACCESS_CODE=${{ secrets.ACCESS_CODE }} >> .env.production
-          echo NOTES=${{ secrets.NOTES }} >> .env.production
+          echo ACCESS_USER=$ACCESS_USER >> .env.production
+          echo ACCESS_CODE=$ACCESS_CODE >> .env.production
+          echo NOTES=$NOTES >> .env.production
           ${{ steps.detect-package-manager.outputs.runner }} next build
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

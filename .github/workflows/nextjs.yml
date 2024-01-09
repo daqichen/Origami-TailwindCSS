@@ -73,6 +73,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Run Commands with Secret
+        env:
+            SECRET_VALUE: ${{ secrets.ACCESS_USER }}
+        run: |
+          echo "Hello World"
+          echo "This is a secret value: $SECRET_VALUE"
       - name: Build with Next.js
         env:
           ACCESS_USER: ${{ secrets.ACCESS_USER }}

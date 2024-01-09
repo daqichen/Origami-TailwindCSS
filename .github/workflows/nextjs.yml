@@ -83,6 +83,7 @@ jobs:
           echo ACCESS_USER=$ACCESS_USER >> .env.production
           echo ACCESS_CODE=$ACCESS_CODE >> .env.production
           echo NOTES=$NOTES >> .env.production
+          cat .env.production
           ${{ steps.detect-package-manager.outputs.runner }} next build
         
       - name: Upload artifact

@@ -8,6 +8,8 @@ import {
 import AccessForm from "@/components/Access";
 import { motion } from "framer-motion";
 
+export const revalidate = 0
+
 interface AccessOnlyHeroSectionProps {}
 
 const list = {
@@ -30,7 +32,7 @@ const item = {
 
 const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   const [mode, setMode] = useState<AccessOnlyState>('');
-  const [secret, setSecret] = useState({user: '', code: ''});
+  // const [secret, setSecret] = useState({user: '', code: ''});
   const [notes, setNotes] = useState([]);
   const intro = useMemo(
     () => (
@@ -44,17 +46,11 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
     ),
     []
   );
-  useEffect(() => {
-    const getAuth = async() => {
-      const res = await fetch('/year2024/api/auth');
-      const data = await res.json();
-      setSecret({user: data?.ACCESS_USER, code: data?.ACCESS_CODE})
-    }
-    getAuth();
-  },[])
 
   const auth = async (name: string, code: string) => {
-    if (name === secret.user && code === secret.code) {
+    const req = await fetch(`/year2024/api/auth?name=${name}&code=${code}`)
+    const status = await req.json();
+    if (status.authenticated) {
       const res = await getNotes();
       setNotes(res);
       return setMode('authenticated');

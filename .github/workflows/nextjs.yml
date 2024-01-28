@@ -90,11 +90,15 @@ jobs:
           echo NOTES=$NOTES >> .env.local
           cat .env.local
           ${{ steps.detect-package-manager.outputs.runner }} next build
-        
+      - name: Move Next standalone files
+        run: |
+          cp -r public/ .next/standalone/
+          cp -r .next/static .next/standalone/.next/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: .next/standalone
 
   # Deployment job
   deploy:

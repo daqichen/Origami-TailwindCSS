@@ -7,8 +7,10 @@ import {
 } from "@material-tailwind/react";
 import AccessForm from "@/components/Access";
 import { motion } from "framer-motion";
+import { METHODS } from "http";
 
 export const revalidate = 0
+export const dynamic = 'force-dynamic';
 
 interface AccessOnlyHeroSectionProps {}
 
@@ -48,8 +50,16 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   );
 
   const auth = async (name: string, code: string) => {
-    const req = await fetch(`/year2024/api/auth?name=${name}&code=${code}`)
+    const req = await fetch(
+      `/year2024/api/auth`, {
+        method: 'POST',
+        body: JSON.stringify({name,code}),
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
     const status = await req.json();
+    console.log(status)
     if (status.authenticated) {
       const res = await getNotes();
       setNotes(res);

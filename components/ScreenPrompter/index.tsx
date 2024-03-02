@@ -46,7 +46,7 @@ const ScreenPrompter: FC<ScreenPrompterProps> = ({
               style={{
                 minWidth: "5px",
                 textAlign: "center",
-                marginTop: "-13px",
+                marginTop: "-3px",
                 opacity: 0,
               }}
               animate={{

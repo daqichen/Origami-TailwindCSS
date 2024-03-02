@@ -8,7 +8,7 @@ import {
 import ScreenPrompter from "@/components/ScreenPrompter";
 import { motion } from "framer-motion";
 
-interface ReflectHeroSectionProps {}
+interface RecipeHeroSectionProps {}
 
 const list = {
   visible: {
@@ -28,14 +28,13 @@ const item = {
   hidden: { opacity: 0, x: -10 },
 };
 
-const ReflectHeroSection: FC<ReflectHeroSectionProps> = ({}) => {
+const RecipeHeroSection: FC<RecipeHeroSectionProps> = ({}) => {
   const [mode, setMode] = useState<ProgressState>('intro');
   const intro = useMemo(
     () => (
       <MultilineTypewriter
         texts={[
-          "This is a 2024 resolution",
-          "one by a software engineer in the elaborate form of a webpage",
+          "Recipes I loved from 2024",
           ". . ."
         ]}
         onFinish={() => setMode("idle")}
@@ -45,7 +44,7 @@ const ReflectHeroSection: FC<ReflectHeroSectionProps> = ({}) => {
   );
 
   return (
-    <section className="bg-primaryColor color-offwhite w-full min-h-screen p-20 flex flex-col justify-center">
+    <section className="bg-black color-offwhite w-screen min-h-screen p-20 flex flex-col justify-center">
       {intro}
       {mode === "idle"&& 
         <motion.div 
@@ -58,23 +57,24 @@ const ReflectHeroSection: FC<ReflectHeroSectionProps> = ({}) => {
             transition: { ease: 'easeOut' },
           }}
         >
-          To see the progress so far, click Proceed: &nbsp;&nbsp;
+          To see the collection so far, click Proceed: &nbsp;&nbsp;
           <Button onClick={() => setMode("proceed")} placeholder={undefined}>Proceed</Button>
         </motion.div>
       }
       {mode === "proceed"&& 
       <div className="py-20">
-        {/* TODO: motion advanced usage */}
         <ScreenPrompter
             key={1}
-            text={"This is a screen prompter"}
+            text={"No.1"}
             onFinishDelay={100}
             stepTimeSecond={0.3}
-          />        
+          />
+          <Button onClick={() => console.log} placeholder={undefined}>Lamb Curry</Button>
+        
       </div>
       }
     </section>
   );
 };
 
-export default ReflectHeroSection;
+export default RecipeHeroSection;

@@ -69,10 +69,10 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
         <div className={styles.subContainer}>
           <div>
             {format === 'original'? <p className={styles.altTitle}>
-              You can select just your photograph with this dropdown:
+              You can select just your photograph
             </p>: 
             <p className={styles.title}>
-              Painting Wall!
+              Painting Wall
               </p>}
           </div>
 

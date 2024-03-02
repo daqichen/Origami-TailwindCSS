@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import Sidebar from '@/components/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistMono.className} ${GeistSans.className}`}>
       <body className={inter.className}>
-        <Header />
+        <Sidebar/>
         {children}
         </body>
     </html>

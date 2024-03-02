@@ -50,7 +50,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
 
   const auth = async (name: string, code: string) => {
     const req = await fetch(
-      `/year2024/api/auth`, {
+      `/api/auth`, {
         method: 'POST',
         body: JSON.stringify({name,code}),
         headers: {
@@ -69,7 +69,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   }
 
   const getNotes = async() => {
-    const res = await fetch('/year2024/api/notes');
+    const res = await fetch('/api/notes');
     const data = await res.json();
     return JSON.parse(data?.NOTES);
   }

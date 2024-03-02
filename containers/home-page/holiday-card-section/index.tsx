@@ -119,7 +119,7 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
             {recipients.map((recipient) => 
                 <img
                   className="h-full w-full object-cover"
-                  src={`/year2024/painted/_${recipient.id}.jpg`}
+                  src={`/painted/_${recipient.id}.jpg`}
                   alt={`${recipient.name} Img`}
                 />
             )}
@@ -131,7 +131,7 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
                   <img
                   className="h-40 my-2 w-full max-w-full rounded-lg object-cover object-center"
                   // className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
-                    src={`/year2024/original/_${recipient.id}.jpg`}
+                    src={`/original/_${recipient.id}.jpg`}
                     alt={`${recipient.name} Img`}
                     onClick={()=> setPerson(recipient.id)}
                   />
@@ -143,13 +143,13 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
             <div className="mb-32 grid gap-2 lg:gap-8 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-center">
                 <img
                     className="my-2 h-full w-full rounded-xl object-cover object-center"
-                    src={`/year2024/original/_${recipient.id}.jpg`}
+                    src={`/original/_${recipient.id}.jpg`}
                     alt={`${recipient.name} Img`}
                   />
                 <figure className="relative h-96 w-full">
                   <img
                     className="h-full w-full rounded-xl object-cover object-center"
-                    src={`/year2024/painted/_${recipient.id}.jpg`}
+                    src={`/painted/_${recipient.id}.jpg`}
                     alt={`${recipient.name} Img`}
                   />
                   <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
@@ -165,7 +165,7 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
                 </figure>
                 {/* <Image
                   className={`${format != 'original' && 'rounded-lg'} object-cover mx-auto my-10`}
-                  src={`/year2024/${format != 'original'? 'original': 'painted'}/_${recipient.id}.jpg`}
+                  src={`/${format != 'original'? 'original': 'painted'}/_${recipient.id}.jpg`}
                   width={200}
                   height={200}
                   unoptimized

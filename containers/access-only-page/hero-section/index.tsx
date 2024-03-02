@@ -7,7 +7,6 @@ import {
 } from "@material-tailwind/react";
 import AccessForm from "@/components/Access";
 import { motion } from "framer-motion";
-import { METHODS } from "http";
 
 export const revalidate = 0
 export const dynamic = 'force-dynamic';
@@ -75,7 +74,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   }
 
   return (
-    <section className="bg-primaryColor color-offwhite w-full min-h-screen p-20 flex flex-col justify-center">
+    <section style={{width:'100vw'}} className="bg-primaryColor color-offwhite min-h-screen p-20 flex flex-col justify-center">
       {intro}
       {mode === "unknown"&& 
         <motion.div 

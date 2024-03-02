@@ -1,6 +1,7 @@
 'use client'
 import React, { FC, useState } from "react";
 import { Carousel, Typography } from "@material-tailwind/react";
+import { styles } from "./style";
 
 interface HolidayCardSectionProps {
   format: string;
@@ -64,12 +65,15 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
   const [person, setPerson] = useState('');
   return (
     <section id={format === 'original'? 'photographs': 'paintings'} className="w-full flex justify-center">
-      <div className=" flex flex-col py-10 md:py-28 items-center  gap-8 md:gap-12 w-full max-w-screen-xl mx-5 md:mx-20">
-        <div className="flex flex-col items-center w-full md:max-w-[800px] text-center gap-8">
+      <div className={styles.container}>
+        <div className={styles.subContainer}>
           <div>
-            <p className="text-textColor text-sm md:text-lg">
-              {format === 'original'? 'You can select just your photograph with this dropdown:': 'Painting Wall!'} 
-            </p>
+            {format === 'original'? <p className={styles.altTitle}>
+              You can select just your photograph with this dropdown:
+            </p>: 
+            <p className={styles.title}>
+              Painting Wall!
+              </p>}
           </div>
 
           {/* Dropdown: only photographs are applicable */}
@@ -78,26 +82,26 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
             <div className="group">
                 {person===''?
                 <button type="button"
-                    className="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                    className={styles.menuButton}
                     onClick={() => setMenuOpen(!menuOpen)}>
                     Select a person to view
-                    <svg className="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className={styles.expandSvg} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 12l-5-5h10l-5 5z" />
                     </svg>
                 </button>
                 :
                 <button type="button"
-                  className="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                  className={styles.menuButton}
                   onClick={() => setPerson('')}>
                     View All
                 </button>}
 
                 {menuOpen && 
                 <div
-                    className="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg">
+                    className={styles.menuContainer}>
                     <div className="py-1">
                       {recipients.map(recipient => 
-                        <button key={recipient.id} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={()=>{setPerson(recipient.id); setMenuOpen(false)}}>
+                        <button key={recipient.id} className={styles.menuOptions} onClick={()=>{setPerson(recipient.id); setMenuOpen(false)}}>
                           {recipient.name}
                           </button>
                         )}

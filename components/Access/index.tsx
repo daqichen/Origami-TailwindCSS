@@ -4,14 +4,12 @@ import {
   Button,
   Dialog,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Typography,
   Input,
-  Checkbox,
 } from "@material-tailwind/react";
- 
+import { styles } from "./style";
 
 interface AccessFormProps {
     handleSignin?: (name:string, code:string) => void;
@@ -31,11 +29,11 @@ const AccessForm : FC<AccessFormProps> = ({handleSignin}) => {
         size="xs"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none"
+        className={styles.popUp}
         placeholder={undefined}
       >
-        <Card className="mx-auto w-full max-w-[24rem]" placeholder={undefined}>
-          <CardBody className="flex flex-col gap-4" placeholder={undefined}>
+        <Card className={styles.card} placeholder={undefined}>
+          <CardBody className={styles.cardBody} placeholder={undefined}>
             <Typography variant="h4" color="blue-gray" placeholder={undefined}>
               Access ONLY
             </Typography>
@@ -55,15 +53,12 @@ const AccessForm : FC<AccessFormProps> = ({handleSignin}) => {
               Access Code: 
             </Typography>
             <Input key="code-input" value={codeInput} onChange={(e) => setCodeInput(e.target.value)} label="code" size="lg" placeholder={undefined} crossOrigin={undefined}/>
-            {/* <div className="-ml-2.5 -mt-3">
-              <Checkbox label="Remember Me" />
-            </div> */}
           </CardBody>
           <CardFooter className="pt-0" placeholder={undefined}>
             <Button variant="gradient" onClick={(e) => handleSignin && handleSignin(nameInput, codeInput)} fullWidth placeholder={undefined}>
               Access
             </Button>
-            <Typography variant="small" className="cursor-pointer mt-4 flex justify-center font-bold" onClick={handleOpen} placeholder={undefined}>
+            <Typography variant="small" className={styles.dismissButton} onClick={handleOpen} placeholder={undefined}>
               Dismiss
             </Typography>
           </CardFooter>

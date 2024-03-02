@@ -10,10 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-geist-sans)'],
+        serif: ['rserif', 'sans-serif']
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(#f69d3c)',
+        'gradient-radial': 'radial-gradient(#e66465 20%, #9198e5);',
         'gradient-conic':
-          'conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1)'
+          'conic-gradient(180deg, black 20%, #3c5e6d 35%, #f4310e, #f58308 80%, black);',
       },
       colors:{
         'primaryColor':'#151411',
@@ -22,7 +27,10 @@ const config: Config = {
         'offwhite':'#F2F1E4',
         'darkgrey': '#736A5F',
         'darksilver':'#4A5259',
-        'lightsilver':'#D9D9D9'
+        'lightsilver':'#D9D9D9',
+        'almostblack': '#212622',
+        'almostwhite': '#e8e8eb',
+        'beige': '#dfddd0'
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',

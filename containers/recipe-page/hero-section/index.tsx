@@ -44,7 +44,7 @@ const RecipeHeroSection: FC<RecipeHeroSectionProps> = ({}) => {
   );
 
   return (
-    <section className="bg-black color-offwhite w-screen min-h-screen p-20 flex flex-col justify-center">
+    <section className="bg-black color-offwhite w-full min-h-screen p-20 flex flex-col justify-center">
       {intro}
       {mode === "idle"&& 
         <motion.div 

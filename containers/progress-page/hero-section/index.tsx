@@ -35,11 +35,8 @@ const ReflectHeroSection: FC<ReflectHeroSectionProps> = ({}) => {
       <MultilineTypewriter
         texts={[
           "This is a 2024 resolution",
-          "but one by a software engineer in the elaborate form of a webpage",
-          ". . .",
-          "The hope for this year is to be more proactive in learning",
-          "technical skills and beyond",
-          ". . .",
+          "one by a software engineer in the elaborate form of a webpage",
+          ". . ."
         ]}
         onFinish={() => setMode("idle")}
       />

@@ -6,10 +6,7 @@ const nextConfig = {
         ACCESS_USER: process?.env?.ACCESS_USER,
         ACCESS_CODE: process?.env?.ACCESS_CODE,
         NOTES: process?.env?.NOTES
-      },
-    // images: {
-    //     domains: ['localhost']
-    //   }
+      }
 }
 
 module.exports = nextConfig

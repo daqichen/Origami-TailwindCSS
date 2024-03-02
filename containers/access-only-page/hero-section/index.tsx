@@ -75,7 +75,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   }
 
   return (
-    <section className="bg-black color-offwhite w-full min-h-screen p-20 flex flex-col justify-center">
+    <section className="bg-primaryColor color-offwhite w-full min-h-screen p-20 flex flex-col justify-center">
       {intro}
       {mode === "unknown"&& 
         <motion.div 

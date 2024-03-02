@@ -22,7 +22,7 @@ export const NavigationIndex: Navigation[] = [
   // },
   {
     id: 4,
-    value: "<3",
+    value: "♥️",
     href: "/access-only",
   },
 ];

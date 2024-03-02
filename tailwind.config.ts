@@ -13,10 +13,10 @@ const config: Config = {
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
-        serif: ['rserif', 'sans-serif']
+        gsans: ['g-sans', 'sans']
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(#e66465 20%, #9198e5);',
+        'gradient-radial': 'radial-gradient(#01415b 20%, #54819f);',
         'gradient-conic':
           'conic-gradient(180deg, black 20%, #3c5e6d 35%, #f4310e, #f58308 80%, black);',
       },
@@ -30,7 +30,11 @@ const config: Config = {
         'lightsilver':'#D9D9D9',
         'almostblack': '#212622',
         'almostwhite': '#e8e8eb',
-        'beige': '#dfddd0'
+        'beige': '#dfddd0',
+        'deepkelp': '#01415b',
+        'ocean': '#54819f',
+        'midnight': '#15203f',
+        'tofu': '#f8f8f8'
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',

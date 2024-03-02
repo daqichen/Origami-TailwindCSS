@@ -11,16 +11,16 @@ const HeroSection = () => {
         </h1>
         <div className={styles.headerSub}>
           <div>
-            From&nbsp;<code className="font-sans font-bold">Jen</code> &nbsp;
+            From&nbsp;<code className="font-bold">Jen</code> &nbsp;
           </div>
           <div>
-            To&nbsp;<code className="font-sans font-bold">You</code>
+            To&nbsp;<code className="font-bold">You</code>
           </div>
         </div>
       </div>
 
       <div className={styles.bodySection}>
-        <p className="font-bold text-2xl leading-10">
+        <p className="text-2xl leading-10">
           Here you can find the original pictures of the caricature paintings in your Christmas/New Year Card!
           <br /><br />
           Hope you enjoy the small element of surprise &#127873;

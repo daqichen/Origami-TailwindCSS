@@ -99,7 +99,7 @@ const HolidayCardSection: FC<HolidayCardSectionProps> = ({format}) => {
                 {menuOpen && 
                 <div
                     className={styles.menuContainer}>
-                    <div className="py-1">
+                    <div className="py-1 font-gsans">
                       {recipients.map(recipient => 
                         <button key={recipient.id} className={styles.menuOptions} onClick={()=>{setPerson(recipient.id); setMenuOpen(false)}}>
                           {recipient.name}

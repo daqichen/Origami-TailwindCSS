@@ -74,7 +74,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
   }
 
   return (
-    <section style={{width:'100vw'}} className="bg-primaryColor color-offwhite min-h-screen p-20 flex flex-col justify-center">
+    <section style={{width:'100vw'}} className="color-beige min-h-screen p-20 flex flex-col justify-center">
       {intro}
       {mode === "unknown"&& 
         <motion.div 
@@ -107,7 +107,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
       }
       {/* {mode === "unknown"&&  */}
       <div>
-        <div className="w-[32rem] py-20">
+        <div className="w-full py-10">
           <Timeline>
             {notes.map((el, index) => (
               <TimelineItem>
@@ -130,7 +130,7 @@ const AccessOnlyHeroSection: FC<AccessOnlyHeroSectionProps> = ({}) => {
             
               <TimelineHeader className="h-3">
                 <TimelineIcon className="p-2" color="white"/>
-                <Typography variant="h6" className="leading-none text-offwhite" placeholder={undefined}>
+                <Typography variant="h6" className="leading-none text-beige" placeholder={undefined}>
                   {el['title']}
                 </Typography>
                 <Typography variant="small" className="leading-none text-gray" placeholder={undefined}>

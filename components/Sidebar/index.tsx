@@ -21,7 +21,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
             
         ].join(' '),
         icon: [
-            'fill-tofu',
+            'fill-offwhite',
             'cursor-pointer'
 
         ].join(' ')

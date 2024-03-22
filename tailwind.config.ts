@@ -22,19 +22,15 @@ const config: Config = {
       },
       colors:{
         'primaryColor':'#151411',
-        'darkblue':'#113340',
         'black':'#151411',
-        'offwhite':'#F2F1E4',
-        'darkgrey': '#736A5F',
-        'darksilver':'#4A5259',
         'lightsilver':'#D9D9D9',
-        'almostblack': '#212622',
-        'almostwhite': '#e8e8eb',
         'beige': '#dfddd0',
         'deepkelp': '#01415b',
         'ocean': '#54819f',
         'midnight': '#15203f',
-        'tofu': '#f8f8f8'
+        'template': '#002926',
+        'organism': '#006D5D',
+        'molecule': '#00D5BA',
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',

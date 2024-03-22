@@ -44,7 +44,6 @@ const LandingHeroSection: FC<LandingHeroSectionProps> = ({ }) => {
 [ ] Creating initial components offerings (Tessellation 1 out of 10 done, Pop-up 1 out of 5 done)
 [ ] Publish to NPM Registry
 [ ] Testing integration`}
-          color='molecule'
         />
         {/* {ExampleCardData.map((data) => (
           // Responsive Card Component

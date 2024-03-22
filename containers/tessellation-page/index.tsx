@@ -25,7 +25,6 @@ const TessellationHeroSection:FC<ITessellationHeroSectionProps> = (props) => {
     codeSnippet={"//code snippet goes here"}
     color='molecule'
 />`}
-                color='molecule'
                 />
             <p>
                 <br/><br/>   
@@ -33,7 +32,6 @@ const TessellationHeroSection:FC<ITessellationHeroSectionProps> = (props) => {
             </p>
             <CodeContainer 
                 codeSnippet={`Under Development`}
-                color='molecule'
                 />
             <p>
                 <br/><br/>   
@@ -41,7 +39,6 @@ const TessellationHeroSection:FC<ITessellationHeroSectionProps> = (props) => {
             </p>
             <CodeContainer 
                 codeSnippet={`Under Development`}
-                color='molecule'
                 />
             <p>
                 <br/><br/>   

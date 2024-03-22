@@ -23,10 +23,9 @@ const PopUpHeroSection:FC<IPopUpHeroSectionProps> = (props) => {
     title={data.title}
     description={data.description}
     footer={data.footer}
-    footerColor={'molecule'}
-    containerShade={'organism'}
+    footerColor={} // optional
+    containerShade={} // optional
 />`}
-                color='molecule'
                 />
                 {ExampleCardData.map((data) => (
                     // Responsive Card Component
@@ -34,8 +33,6 @@ const PopUpHeroSection:FC<IPopUpHeroSectionProps> = (props) => {
                         title={data.title}
                         description={data.description}
                         footer={data.footer}
-                        footerColor={'molecule'}
-                        containerShade={'organism'}
                     />
                 ))}
             </div>

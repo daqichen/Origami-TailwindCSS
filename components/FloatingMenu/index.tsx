@@ -14,12 +14,12 @@ export const FloatingMenuItem:FC<FloatingMenuItemProp> = (props) => {
     return (
         props.href ? 
         <a key={props.id} href={props.href}>
-            <div key={props.id} className={`${props.selected ? `${FloatingMenuStyle.selectedItem} border-${props.selectedItemBorderColor ?? 'molecule'}` : FloatingMenuStyle.item} ${props.className}`} onClick={props.onSelect}>
+            <div key={props.id} className={`${props.selected ? `${FloatingMenuStyle.selectedItem} ${props.selectedItemBorderColor && `border-${props.selectedItemBorderColor}`}` : FloatingMenuStyle.item} ${props.className}`} onClick={props.onSelect}>
                 {props.children}
             </div>
         </a>
         :
-        <div key={props.id} className={`${props.selected ? `${FloatingMenuStyle.selectedItem} border-${props.selectedItemBorderColor ?? 'molecule'}` : FloatingMenuStyle.item} ${props.className}`} onClick={props.onSelect}>
+        <div key={props.id} className={`${props.selected ? `${FloatingMenuStyle.selectedItem} ${props.selectedItemBorderColor && `border-${props.selectedItemBorderColor}`}` : FloatingMenuStyle.item} ${props.className}`} onClick={props.onSelect}>
           {props.children}
         </div>
     )

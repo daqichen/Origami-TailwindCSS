@@ -20,6 +20,6 @@ export class FloatingMenuStyle {
     
     static item = 'flex w-fit cursor-pointer mt-2 pr-4 ml-auto';
 
-    static selectedItem = FloatingMenuStyle.item + ` border-r-2`
+    static selectedItem = FloatingMenuStyle.item + ` border-r-2 border-molecule`
     
 }

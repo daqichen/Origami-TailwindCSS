@@ -5,14 +5,15 @@ import FloatingMenu, { FloatingMenuItem } from "./FloatingMenu"
 import { ExampleFloatingMenuData } from "./FloatingMenu/mockData"
 
 const Menu:FC = (props) => {
+    const path = usePathname();
     return (
       <FloatingMenu>
       {ExampleFloatingMenuData.map(menuItem =>
         <FloatingMenuItem 
           id={menuItem.id} 
-          selected={usePathname() === menuItem.href} 
+          key={menuItem.id}
+          selected={path === menuItem.href} 
           // onSelect={() => setMenu(menuItem.key)}
-          selectedItemBorderColor="molecule"
           href={menuItem.href}
           >
           {menuItem.children}

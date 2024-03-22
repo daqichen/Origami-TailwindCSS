@@ -12,7 +12,7 @@ const CodeContainer:FC<CodeContainerProp> = (props) => {
             <span className={CodeContainerStyle.minimize}/>
             <span className={CodeContainerStyle.maximize}/>
             {/* TODO: replace the following with a button component */}
-            <span className={`${CodeContainerStyle.copyButton} bg-${props.color ?? 'white'}/15 hover:bg-${props.color ?? 'white'}/30 [&_svg]:fill-${props.color ?? 'white'}`} onClick={() => navigator.clipboard.writeText(props.codeSnippet)}>{IconLibrary(ICON.CLIPBOARD)}</span>
+            <span className={`${CodeContainerStyle.copyButton} ${props.color && `bg-${props.color}`}/15 ${props.color && `hover:bg-${props.color}/30`} ${props.color && `[&_svg]:fill-${props.color}`}`} onClick={() => navigator.clipboard.writeText(props.codeSnippet)}>{IconLibrary(ICON.CLIPBOARD)}</span>
           </div>
           <pre>
             <code className="font-[monospace] whitespace-pre-wrap">

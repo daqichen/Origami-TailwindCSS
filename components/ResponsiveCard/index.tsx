@@ -9,11 +9,11 @@ const ResponsiveCard:FC<ResponsiveCardProp> = (props) => {
   }  
   return (
       props.children ? 
-        <div className={`bg-${props.containerShade ?? 'none'} ${ResponsiveCardStyle.container} ${props.className}`}>
+        <div className={`${props.containerShade && `bg-${props.containerShade}`} ${ResponsiveCardStyle.container} ${props.className}`}>
           {props.children}
         </div>
         :
-        <div className={`bg-${props.containerShade ?? 'none'} ${ResponsiveCardStyle.container} ${props.className}`}>
+        <div className={`${props.containerShade && `bg-${props.containerShade}`} ${ResponsiveCardStyle.container} ${props.className}`}>
             <div className={`${ResponsiveCardStyle.title} ${props.titleColor && `text-${props.titleColor}`}`}>
               {props.title}
             </div>

@@ -14,7 +14,7 @@ export interface ResponsiveCardProp {
   }
 
 export class ResponsiveCardStyle {
-    static container = 'rounded-lg mt-5 p-4 w-full pt-8 sm:pt-4';
+    static container = 'rounded-lg mt-5 p-4 w-full pt-8 sm:pt-4 bg-organism';
 
     static title = 'text-xl font-bold my-4';
 
@@ -22,5 +22,5 @@ export class ResponsiveCardStyle {
 
     static description = 'font-light text-sm whitespace-pre-line hidden sm:block';
 
-    static footer = 'font-light text-xs mt-4';
+    static footer = 'font-light text-xs mt-4 text-molecule';
 }

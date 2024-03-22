@@ -1,4 +1,4 @@
-# [Origami Tailwind CSS](https://year2024-eta.vercel.app/)
+# [Origami Tailwind CSS](https://origami-tailwindcss.vercel.app/)
 
 <img width="1440" alt="image" src="https://github.com/daqichen/year2024/assets/55526292/7eb36c17-dcbd-4f86-95c8-5e37bf52c97e">
 

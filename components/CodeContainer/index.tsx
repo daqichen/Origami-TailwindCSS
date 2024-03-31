@@ -5,7 +5,7 @@ import { CodeContainerProp, CodeContainerStyle } from "./codeContainer";
 
 const CodeContainer:FC<CodeContainerProp> = (props) => {
     return (
-        <div className={CodeContainerStyle.container}>
+        <div className={`${CodeContainerStyle.container} ${props.className}`}>
           {/* Controls (not active)*/}
           <div className="flex pb-3"> 
             <span className={CodeContainerStyle.close}/>

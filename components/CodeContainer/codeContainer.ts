@@ -1,6 +1,7 @@
 import { TailwindColors } from "@/app/utilities/colorHelper";
 
 export interface CodeContainerProp {
+    className?: string;
     codeSnippet: string;
     children?: React.ReactNode;
     color?: keyof TailwindColors | string;

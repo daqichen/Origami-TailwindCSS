@@ -18,6 +18,22 @@ export const ExampleFloatingMenuData: FloatingMenuItemProp[] = [
         </>,
         href: '/pop-up'
     },
+    {
+        id: 'kinetic',
+        children:<>
+        <span className="fill-molecule mr-2">{IconLibrary(ICON.POPUP)}</span>
+            Kinetic Origami
+        </>,
+        href: '/kinetic'
+    },
+    {
+        id: 'bestPractices',
+        children:<>
+        <span className="fill-molecule mr-2">{IconLibrary(ICON.POPUP)}</span>
+            Best Practices
+        </>,
+        href: '/best-practices'
+    },
     // {
     //     id: 'access-only',
     //     children:<>

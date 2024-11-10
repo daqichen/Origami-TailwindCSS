@@ -1,18 +1,11 @@
-# [Origami Tailwind CSS](https://origami-tailwindcss.vercel.app/)
+# [Origami Tailwind CSS](https://year2024-eta.vercel.app/)
 
 <img width="1440" alt="image" src="https://github.com/daqichen/year2024/assets/55526292/7eb36c17-dcbd-4f86-95c8-5e37bf52c97e">
 
-#### `origami-tailwindcss` is a minimal UI component library that leverages the capabilities of [tailwind CSS](https://tailwindcss.com/). It offers a minimal set of components and exposes the tailwind CSS style classes behind each for developers to modify.
-
-`origami-tailwindcss` joins Tailwind CSS with Typescript to allow more readability and code reusability. It also offers a minimal set of components.
+#### `origami-tailwindcss` is a template [NextJS](https://nextjs.org/docs/) project to learn about the ancient art of origami, the project leverages [tailwind CSS](https://tailwindcss.com/) for styling along with [TypeScript](https://www.typescriptlang.org/) to make it more readable and easier to maintain.
 
 **NOTICE:**
-The library is currently undergoing initial development, therefore is not yet available, the pending work needed is drafted below and if there are any suggestions/questions, please feel free to reach out!
-
-## TODOs:
-- [ ] Creating initial components offerings (Tessellation 1 out of 10 done, Pop-up 1 out of 5 done)
-- [ ] Publish to NPM Registry
-- [ ] Testing integration
+The template is currently undergoing initial development, therefore is not yet ready-for-use, if there are any suggestions/questions, please feel free to reach out!
 
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
